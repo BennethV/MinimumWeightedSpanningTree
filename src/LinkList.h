@@ -21,7 +21,7 @@
 struct Edge{
     int weight;
     Edge* u;
-    Edge* v;
+    //Edge* v;
 };
 
 
@@ -40,7 +40,7 @@ public:
 private:
     Edge* head;
     Edge* tail;
-    int listSize;
+    int size;
 };
 
 #define LinkList_h

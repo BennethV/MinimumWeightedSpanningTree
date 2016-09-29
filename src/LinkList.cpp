@@ -26,7 +26,7 @@
 LinkList::LinkList(){
     head = NULL;
     tail = NULL;
-    listSize = 0;
+    size = 0;
 }
 LinkList::~LinkList(){
     while (!isEmpty()) remove();
@@ -54,14 +54,14 @@ int LinkList::getSize() const{
 void LinkList::add(const int& a){
     Edge* newEdge = new Edge();
     newEdge->weight = a;
-    if(listSize==0) {
+    if(size==0) {
         head = newEdge;
         tail = newEdge;
     } else {
-        tail->next = newEdge;
+        tail->u = newEdge;
         tail = newEdge;
     }
-    listSize ++;
+    size ++;
 }
 
 void LinkList::remove(){
@@ -69,26 +69,26 @@ void LinkList::remove(){
     else {
         Edge* temp = new Edge();
         temp = head;
-        if(head->next == NULL) {
+        if(head->u == NULL){ //||(head->v == NULL)) {
             head = NULL;
             tail = NULL;
-            listSize = 0;
+            size = 0;
         }
         else {
-            head = head->next;
-            listSize --;
+            head = head->u;
+            size --;
         }
     delete temp;
     }
 }
 
 std::ostream& operator<<(std::ostream& out, const LinkList& obj){
-        int width = 20;
         Edge* position = obj.head;
+        out << "{ ";
         while(position != NULL){
-            out << std::setw(width) << std::left << std::setprecision(7) << std::fixed << position->weight;
-            out << std::endl;
-            position=position->next;
+            out << position->weight << " ";
+            position=position->u;
         }
+        out << "}";
     return out;
 }
