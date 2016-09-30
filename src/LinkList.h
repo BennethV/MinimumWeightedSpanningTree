@@ -7,42 +7,36 @@
  * @date 2016-09-28
  */
 
-
-#ifndef LinkedList
+#ifndef LinkList_h
+#define LinkList_h
 
 #include <iostream>
-#include <sstream>
-#include <fstream>
-#include <iomanip>
 #include <stdio.h>
 #include <stdlib.h>
 
-/* edge contains a weighting and endpoints (vertices or null) */
-struct Edge{
+/* Node contains a weighting and endpoints (vertices or null) */
+struct Node{
     int weight;
-    Edge* u;
-    //Edge* v;
+    Node* u;
 };
-
 
 class LinkList{
 public:
     LinkList();
     bool isEmpty() const;
-    const Edge* front() const;
-    const Edge* rear() const;
+    const Node* front() const;
+    const Node* rear() const;
     int getSize() const;
-    void add(const int& a);
-    void remove();
+    void queue(const int& a);
+    void dequeue();
     friend std::ostream& operator<<(std::ostream& out, const LinkList& obj);
     ~LinkList();
 
 private:
-    Edge* head;
-    Edge* tail;
+    Node* head;
+    Node* tail;
     int size;
 };
 
-#define LinkList_h
 
 #endif /* LinkList_h */

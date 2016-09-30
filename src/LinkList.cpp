@@ -18,7 +18,7 @@
 /*
  Implementation of a linked list. The programmer using these methods needs to
  be cautious about checking if the list isEmpty(), and throw an exception if an
- empty list uses remove(), or is the front() or rear() methods are
+ empty list uses dequeue(), or is the front() or rear() methods are
  used on an empty stack. These latter two methods return the memory address of
  the head and tail, respectively.
 */
@@ -29,7 +29,7 @@ LinkList::LinkList(){
     size = 0;
 }
 LinkList::~LinkList(){
-    while (!isEmpty()) remove();
+    while (!isEmpty()) dequeue();
     delete head;
     delete tail;
 }
@@ -37,12 +37,12 @@ bool LinkList::isEmpty() const{
     return (head == NULL);
 }
 
-const Edge* LinkList::front() const{
+const Node* LinkList::front() const{
     if(!isEmpty()) return head;
     else throw std::runtime_error("List is empty!");
 }
 
-const Edge* LinkList::rear() const{
+const Node* LinkList::rear() const{
     if(!isEmpty()) return tail;
     else throw std::runtime_error("List is empty!");
 }
@@ -51,23 +51,23 @@ int LinkList::getSize() const{
     return size;
 }
 
-void LinkList::add(const int& a){
-    Edge* newEdge = new Edge();
-    newEdge->weight = a;
+void LinkList::queue(const int& a){
+    Node* newNode = new Node();
+    newNode->weight = a;
     if(size==0) {
-        head = newEdge;
-        tail = newEdge;
+        head = newNode;
+        tail = newNode;
     } else {
-        tail->u = newEdge;
-        tail = newEdge;
+        tail->u = newNode;
+        tail = newNode;
     }
     size ++;
 }
 
-void LinkList::remove(){
+void LinkList::dequeue(){
     if(isEmpty()) throw std::runtime_error("List is empty!");
     else {
-        Edge* temp = new Edge();
+        Node* temp = new Node();
         temp = head;
         if(head->u == NULL){ //||(head->v == NULL)) {
             head = NULL;
@@ -83,7 +83,7 @@ void LinkList::remove(){
 }
 
 std::ostream& operator<<(std::ostream& out, const LinkList& obj){
-        Edge* position = obj.head;
+        Node* position = obj.head;
         out << "{ ";
         while(position != NULL){
             out << position->weight << " ";

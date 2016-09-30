@@ -20,16 +20,16 @@ using namespace std;
 int main(void){
 
     LinkList* data= new LinkList();
-    data->add(1);
-    data->add(2);
+    data->queue(1);
+    data->queue(2);
     cout<< *data;
     cout << endl;
-    data->remove();
-    data->add(3);
-    data->add(4);
+    data->dequeue();
+    data->queue(3);
+    data->queue(4);
     cout<< *data;
     cout << endl;
-    data->remove();
+    data->dequeue();
     cout<< *data;
     cout << endl;
     return 0;
