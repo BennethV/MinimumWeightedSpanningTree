@@ -11,6 +11,7 @@
 		8F06943D1D9D4F8D002D72CD /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F0694381D9C8482002D72CD /* LinkList.cpp */; };
 		8F1A3AED1D9EA37500733F3B /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph.cpp */; };
 		8F1A3AF21D9EC8EA00733F3B /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
+		8F1A3AF51D9FF1C800733F3B /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF31D9FF1C800733F3B /* Edge.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,8 @@
 		8F1A3AEC1D9EA37500733F3B /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		8F1A3AEF1D9EA56E00733F3B /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 		8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex.cpp; sourceTree = "<group>"; };
+		8F1A3AF31D9FF1C800733F3B /* Edge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Edge.cpp; sourceTree = "<group>"; };
+		8F1A3AF41D9FF1C800733F3B /* Edge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edge.h; sourceTree = "<group>"; };
 		8FAD48AC1D9C810200563E75 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +69,8 @@
 		8FAD48AE1D9C810200563E75 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				8F1A3AF41D9FF1C800733F3B /* Edge.h */,
+				8F1A3AF31D9FF1C800733F3B /* Edge.cpp */,
 				8F1A3AEF1D9EA56E00733F3B /* Vertex.h */,
 				8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */,
 				8F1A3AEC1D9EA37500733F3B /* Graph.h */,
@@ -138,6 +143,7 @@
 				8F1A3AF21D9EC8EA00733F3B /* Vertex.cpp in Sources */,
 				8F06943C1D9C8482002D72CD /* test.cpp in Sources */,
 				8F06943D1D9D4F8D002D72CD /* LinkList.cpp in Sources */,
+				8F1A3AF51D9FF1C800733F3B /* Edge.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

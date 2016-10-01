@@ -1,7 +1,7 @@
 /**
  * COMS2004 Assignment 2, Minimum Weighted Spanning Tree Project
- * @file Node.h
- * @Synopsis Vertex class definition file with Struct edge definition
+ * @file Vertex.h
+ * @Synopsis Vertex class definition file
  * @author Tyson Cross, Kopano Malombo, Vulombe Mathebula, Kimita Ramalingum, Vassiliki Marantos, Mfaniseni Thusi, Kulani Nukeri
  * @version 1.0
  * @date 2016-09-28
@@ -12,24 +12,20 @@
 
 #include <stdio.h>
 #include <vector>
-
-struct Edge;
+#include "Edge.h"
 
 /* Vertex contains a weighting and endpoints (vertices or null) */
 class Vertex{
 public:
     Vertex();
+    void addEdge(Edge* e);
+    void removeEdge(Edge* e);
+    const bool isVisited();
+    void setVisited();
     ~Vertex();
-
 private:
-    std::vector<Edge> connectedEdges;
+    bool visited;
+    std::vector<Edge*> connectedEdges;
 };
 
-/* Edge contains a weighting and endpoints (vertices or null) */
-struct Edge{
-    int weight;
-    Vertex* u;
-    Vertex* v;
-};
-
-#endif /* Node_h */
+#endif /* Vertex_h */
