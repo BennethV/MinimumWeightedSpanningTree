@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include "Vertex.h"
 
+class Vertex; // Forward declaration;
+
 /* Edge contains a weighting and endpoints (vertices or null) */
 class Edge{
 public:

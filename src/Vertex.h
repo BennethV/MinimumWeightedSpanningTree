@@ -14,14 +14,18 @@
 #include <vector>
 #include "Edge.h"
 
+class Edge; // Forward declaration
+
 /* Vertex contains a weighting and endpoints (vertices or null) */
 class Vertex{
 public:
     Vertex();
     void addEdge(Edge* e);
     void removeEdge(Edge* e);
+    Edge* getEdge(int i);
+    long int numEdges();
     const bool isVisited();
-    void setVisited();
+    void setVisited(bool value);
     ~Vertex();
 private:
     bool visited;

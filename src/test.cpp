@@ -14,6 +14,9 @@
 #include <stdlib.h>
 #include <string>
 #include "LinkList.h"
+#include "Edge.h"
+#include "Vertex.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -32,6 +35,9 @@ int main(void){
     data->dequeue();
     cout<< *data;
     cout << endl;
+    Graph* g = new Graph;
+    delete data;
+    delete g;
     return 0;
 }
 

@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 /* Node contains a weighting and endpoints (vertices or null) */
 struct Node{
     int weight;

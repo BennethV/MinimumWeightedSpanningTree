@@ -43,6 +43,17 @@ void Graph::removeEdge(int i){
 
 bool Graph::isConnected(int vert1, int vert2){
     // check the connectedEdges lists for both vertices, to see if there is a common edge
+    Vertex* vertex1 = vertices.at(vert1);
+    Vertex* vertex2 = vertices.at(vert2);
+    for (int i = 0; i < vertex1->numEdges() ; i++){
+        Edge* edge1 = vertex1->getEdge(i);
+        for (int j = 0; j < vertex2->numEdges() ; j++){
+            if (edge1 == vertex2->getEdge(j)){
+                return true;
+            }
+        }
+    }
+    return false;
 };
 
 Edge* Graph::getEdge(int i){
@@ -58,6 +69,7 @@ void Graph::sortEdges(){
 };
 
 void Graph::display(){
+
     // display the graph
 };
 

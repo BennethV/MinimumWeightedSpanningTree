@@ -37,5 +37,4 @@ private:
     //int id_counter;
 };
 
-
 #endif /* Graph_h */

@@ -8,26 +8,41 @@
  */
 
 #include <stdio.h>
+#include <algorithm>
+#include <vector>
 #include "Vertex.h"
 
 Vertex::Vertex(){
     visited = 0;
 }
 
-void Vertex::addEdge(Edge* e){
-
+void Vertex::addEdge(Edge::Edge* e){
+    connectedEdges.push_back(e);
 };
 
-void Vertex::removeEdge(Edge* e){
-
+void Vertex::removeEdge(Edge::Edge* e){
+    for( int i = 0; i < connectedEdges.size(); i++){
+        if (connectedEdges.at(i)==e){
+            connectedEdges.erase(connectedEdges.begin()+i);
+            i--;
+        }
+    }
 };
+
+long int Vertex::numEdges(){
+    return connectedEdges.size();
+};
+
+Edge* Vertex::getEdge(int i){
+    return connectedEdges.at(i);
+}
 
 const bool Vertex::isVisited(){
     return visited;
 };
 
-void Vertex::setVisited(){
-
+void Vertex::setVisited(bool value){
+    visited = value;
 };
 
 Vertex::~Vertex(){
