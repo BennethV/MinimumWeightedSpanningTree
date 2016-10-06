@@ -2,7 +2,7 @@
  * COMS2004 Assignment 2, Minimum Weighted Spanning Tree Project
  * @file Graph.h
  * @Synopsis Definition file for a Graph class
- * @author Tyson Cross, Kopano Malombo, Vulombe Mathebula, Kimita Ramalingum, Vassiliki Marantos, Mfaniseni Thusi, Kulani Nukeri
+ * @author Tyson Cross, Kulani Nukeri, Kopano Malombo, Vassiliki Marantos, Vulombe Mathebula, Kimita Ramalingum, Mfaniseni Thusi
  * @version 1.0
  * @date 2016-09-28
  */

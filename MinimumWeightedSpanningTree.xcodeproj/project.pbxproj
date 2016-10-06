@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F06943C1D9C8482002D72CD /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F06943A1D9C8482002D72CD /* test.cpp */; };
 		8F06943D1D9D4F8D002D72CD /* LinkList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F0694381D9C8482002D72CD /* LinkList.cpp */; };
+		8F190C611DA67D4500E3C703 /* generate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F190C601DA67D4500E3C703 /* generate.cpp */; };
 		8F1A3AED1D9EA37500733F3B /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AEB1D9EA37500733F3B /* Graph.cpp */; };
 		8F1A3AF21D9EC8EA00733F3B /* Vertex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF11D9EC8EA00733F3B /* Vertex.cpp */; };
 		8F1A3AF51D9FF1C800733F3B /* Edge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F1A3AF31D9FF1C800733F3B /* Edge.cpp */; };
@@ -30,6 +31,7 @@
 		8F0694381D9C8482002D72CD /* LinkList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinkList.cpp; sourceTree = "<group>"; };
 		8F0694391D9C8482002D72CD /* LinkList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkList.h; sourceTree = "<group>"; };
 		8F06943A1D9C8482002D72CD /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		8F190C601DA67D4500E3C703 /* generate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = generate.cpp; sourceTree = "<group>"; };
 		8F1A3AEB1D9EA37500733F3B /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
 		8F1A3AEC1D9EA37500733F3B /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		8F1A3AEF1D9EA56E00733F3B /* Vertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				8F1A3AEB1D9EA37500733F3B /* Graph.cpp */,
 				8F0694391D9C8482002D72CD /* LinkList.h */,
 				8F0694381D9C8482002D72CD /* LinkList.cpp */,
+				8F190C601DA67D4500E3C703 /* generate.cpp */,
 				8F06943A1D9C8482002D72CD /* test.cpp */,
 			);
 			path = src;
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F190C611DA67D4500E3C703 /* generate.cpp in Sources */,
 				8F1A3AED1D9EA37500733F3B /* Graph.cpp in Sources */,
 				8F1A3AF21D9EC8EA00733F3B /* Vertex.cpp in Sources */,
 				8F06943C1D9C8482002D72CD /* test.cpp in Sources */,
