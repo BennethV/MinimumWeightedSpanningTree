@@ -1,24 +1,23 @@
 /**
  * COMS2004 Assignment 2, Minimum Weighted Spanning Tree Project
- * @file Edge.h
- * @Synopsis Graph generation
+ * @file generate.cpp
+ * @Synopsis Renerates randomly conected graphs (dense and sparse)
  * @author Tyson Cross, Kulani Nukeri, Kopano Malombo, Vassiliki Marantos, Vulombe Mathebula, Kimita Ramalingum, Mfaniseni Thusi
  * @version 1.0
- * @date 2016-09-28
+ * @date 2016-09-27
  */
-
 
 #include <iostream>
 #include <fstream>
-#include <cstdlib>
-#include <cmath>
-#include <ctime>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 
 using namespace std;
 
 class Graphm{
     public:
-        Graphm();
+        Graphm(int _numVertex);
         ~Graphm();
         void genDenseGraph();
         void genSparseGraph();
@@ -27,7 +26,6 @@ class Graphm{
 
     private:
         void setZeros(int** _matrixDense);
-        int randomVert();
         double randomWeights();
         int numVertex;
         int** matrixDense;
@@ -37,8 +35,8 @@ class Graphm{
 
 };
 
-Graphm::Graphm(){
-    numVertex  = randomVert();
+Graphm::Graphm(int _numVertex){
+    numVertex  = _numVertex;
     numEdge = 0;
     weight = 0.0;
     matrixDense = new int*[numVertex];
@@ -77,7 +75,7 @@ void Graphm::setZeros(int** _matrixDense){
 * is joined by exactly one vertex.
 */
 void Graphm::genDenseGraph(){
-        srand(time(NULL));
+        srand(int(time(NULL)));
         for(int i = 0 ; i < numVertex ; i++){
             for(int j = 0; j < numVertex ; j++){
 
@@ -97,7 +95,7 @@ void Graphm::genDenseGraph(){
 
 
 void Graphm::genSparseGraph(){
-     srand(time(NULL));
+     srand(int(time(NULL)));
     for(int i = 0 ; i < numVertex ; i++){
             for(int j = 0; j < numVertex ; j++){
                 if((i-j)==1){
@@ -112,7 +110,7 @@ void Graphm::genSparseGraph(){
     double d= 0.3*numVertex;
     c=d;
     numEdge=numVertex + c;
-    srand(time(NULL));
+    srand(int(time(NULL)));
     while(c !=0){
 
         int i= rand()%(numVertex-1) +1;
@@ -139,7 +137,7 @@ void Graphm::genSparseGraph(){
 void Graphm::printSparse(int** matrixSparse){
 
      ofstream output;
-     output.open("sparse.dat",ios::app);
+     output.open("../../data/sparse.dat",ios::app);
      output << numVertex << endl;
      output << numEdge << endl;
     for(int i =0; i<numVertex; ++i){
@@ -158,7 +156,7 @@ output.close();
 void Graphm::printDense(int** matrixDense){
 
      ofstream output;
-     output.open("dense.dat",ios::app);
+     output.open("../../data/dense.dat",ios::app);
      output << numVertex << endl;
      output << numEdge << endl;
 
@@ -175,14 +173,7 @@ void Graphm::printDense(int** matrixDense){
     }
     output.close();
 }
-int Graphm::randomVert(){
 
-    int numVert;
-
-    srand(time(NULL));
-    numVert = rand()%991 + 10;
-    return numVert;
-}
 
 double Graphm::randomWeights(){
 
@@ -191,13 +182,26 @@ double Graphm::randomWeights(){
 }
 
 
-
 int main()
 {
-    srand(time(NULL));
-    Graphm obj;
-    obj.genDenseGraph();
-    cout<<endl;
-    obj.genSparseGraph();
+    /* Profiling */
+    // overall system time elapsed
+    clock_t startTime = clock();
+
+    int _numVertices = 0;
+    srand(int(time(NULL)));
+    for(_numVertices = 10; _numVertices <= 1000 ; _numVertices++ ){
+
+        Graphm obj(_numVertices);
+        obj.genDenseGraph();
+        cout<<endl;
+        obj.genSparseGraph();
+    }
+
+    /* Profiling end */
+    cout << "Executable Runtime: " << double( clock() - startTime) / (double) CLOCKS_PER_SEC << " seconds." << endl;
+    cout << "Processing complete: created ../../data/dense.dat" << endl;
+    cout << "Processing complete: created ../../data/dense.dat" << endl;
+
     return 0;
 }

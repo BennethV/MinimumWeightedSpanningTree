@@ -4,7 +4,7 @@
  * @Synopsis Edge class definition file
  * @author Tyson Cross, Kulani Nukeri, Kopano Malombo, Vassiliki Marantos, Vulombe Mathebula, Kimita Ramalingum, Mfaniseni Thusi
  * @version 1.0
- * @date 2016-09-28
+ * @date 2016-09-28 
  */
 
 #ifndef Edge_h
