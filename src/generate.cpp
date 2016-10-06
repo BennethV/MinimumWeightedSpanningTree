@@ -11,8 +11,8 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include<cmath>
-#include<ctime>
+#include <cmath>
+#include <ctime>
 
 using namespace std;
 

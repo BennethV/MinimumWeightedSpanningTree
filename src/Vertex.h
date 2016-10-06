@@ -24,7 +24,7 @@ public:
     void removeEdge(Edge* e);
     Edge* getEdge(int i);
     long int getName();
-    long int numConnectedEdges();
+    long int numEdges();
     const bool isVisited();
     void setVisited(bool value);
     ~Vertex();

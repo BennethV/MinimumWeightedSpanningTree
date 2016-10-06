@@ -17,11 +17,11 @@ Vertex::Vertex(long int i){
     name = i;
 }
 
-void Vertex::addEdge(Edge::Edge* e){
+void Vertex::addEdge(Edge* e){
     connectedEdges.push_back(e);
 };
 
-void Vertex::removeEdge(Edge::Edge* e){
+void Vertex::removeEdge(Edge* e){
     for( int i = 0; i < connectedEdges.size(); i++){
         if (connectedEdges.at(i)==e){
             connectedEdges.erase(connectedEdges.begin()+i);
@@ -30,7 +30,11 @@ void Vertex::removeEdge(Edge::Edge* e){
     }
 };
 
-long int Vertex::numConnectedEdges(){
+long int Vertex::getName(){
+    return name;
+};
+
+long int Vertex::numEdges(){
     return connectedEdges.size();
 };
 
