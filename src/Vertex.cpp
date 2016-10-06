@@ -12,8 +12,9 @@
 #include <vector>
 #include "Vertex.h"
 
-Vertex::Vertex(){
+Vertex::Vertex(long int i){
     visited = 0;
+    name = i;
 }
 
 void Vertex::addEdge(Edge::Edge* e){
@@ -29,7 +30,7 @@ void Vertex::removeEdge(Edge::Edge* e){
     }
 };
 
-long int Vertex::numEdges(){
+long int Vertex::numConnectedEdges(){
     return connectedEdges.size();
 };
 
@@ -48,3 +49,6 @@ void Vertex::setVisited(bool value){
 Vertex::~Vertex(){
     connectedEdges.clear();
 }
+
+// Potential exceptions: empty edgelist with any of the getter methods...
+// What should visited be when the list is empty??

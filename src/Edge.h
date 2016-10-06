@@ -24,6 +24,9 @@ public:
     double getWeight();
     Vertex* getU();
     Vertex* getV();
+    bool operator ==(const Edge &obj);
+    bool operator >(const Edge &obj);
+    bool operator <(const Edge &obj);
     ~Edge();
 private:
     double weight;

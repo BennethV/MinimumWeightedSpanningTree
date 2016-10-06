@@ -19,16 +19,18 @@ class Edge; // Forward declaration
 /* Vertex contains a weighting and endpoints (vertices or null) */
 class Vertex{
 public:
-    Vertex();
+    Vertex(long int i);
     void addEdge(Edge* e);
     void removeEdge(Edge* e);
     Edge* getEdge(int i);
-    long int numEdges();
+    long int getName();
+    long int numConnectedEdges();
     const bool isVisited();
     void setVisited(bool value);
     ~Vertex();
 private:
     bool visited;
+    long int name;
     std::vector<Edge*> connectedEdges;
 };
 

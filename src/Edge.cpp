@@ -36,6 +36,24 @@ Vertex* Edge::getV(){
     return v;
 };
 
+bool Edge::operator==(const Edge &obj)
+{
+    return (weight == obj.weight);
+}
+
+bool Edge::operator>(const Edge &obj)
+{
+    return (weight > obj.weight);
+}
+
+bool Edge::operator<(const Edge &obj)
+{
+    return (weight < obj.weight);
+}
+
 Edge::~Edge(){
     //destructor method: note that pointer still may exist in Graph.edges vector!
 };
+
+// Potential exceptions: empty vertex list with any of the getter methods....
+// What should visited be when the list is empty??
