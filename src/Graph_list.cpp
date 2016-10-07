@@ -41,8 +41,11 @@ void Graph_list::addEdge(int vert1, int vert2, double weight){
     // make a new edge, between the two indices of the vertices list, with specified weight
     // update the relevant vertices, to add this new edge to their connectedEdges list
     bool status = true;
-    if ( (vert1>numVertices()) || (vert2>numVertices()) ) {
-        throw std::out_of_range("Specified vertex does not exist (out of range), unable to addEdge()");
+    if ( vert1>numVertices()){
+        throw std::out_of_range("First vertex does not exist (out of range), unable to addEdge()");
+    };
+    if ( vert2>numVertices()){
+        throw std::out_of_range("Second vertex does not exist (out of range), unable to addEdge()");
     };
     if (isConnected(vert1, vert2)) {
         std::cerr << "Warning : Vertices " << vertices.at(vert1)->getName() << " and " << vertices.at(vert2)->getName() << " are already connected, unable to addEdge()" << std::endl;

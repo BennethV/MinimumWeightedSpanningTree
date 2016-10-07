@@ -73,7 +73,7 @@ void Graphm::setZeros(int** _matrixDense){
 */
 
 void Graphm::genDenseGraph(int maximum){
-        srand(int(time(NULL)));
+        //srand(int(time(NULL)));
         for(int i = 0 ; i < numVertex ; i++){
             for(int j = 0; j < numVertex ; j++){
 
@@ -93,7 +93,7 @@ void Graphm::genDenseGraph(int maximum){
 * of vertices i.e any pair of vertices is joined by exactly one vertex.
 */
 void Graphm::genSparseGraph(int maximum){
-     srand(int(time(NULL)));
+     //srand(int(time(NULL)));
     for(int i = 0 ; i < numVertex ; i++){
             for(int j = 0; j < numVertex ; j++){
                 if((i-j)==1){
@@ -106,7 +106,7 @@ void Graphm::genSparseGraph(int maximum){
     double d= 0.3*numVertex;
     c=d;
     numEdge=numVertex + c;
-    srand(int(time(NULL)));
+    //srand(int(time(NULL)));
     while(c !=0){
         int i= rand()%(numVertex-1) +1;
         int j= rand()%(numVertex-2) +0;
@@ -129,8 +129,8 @@ void Graphm::printSparse(int** matrixSparse){
     output.open("../../data/sparse.dat",std::ios::app);
     output << numVertex << std::endl;
     output << numEdge << std::endl;
-    for(int i =0; i<numVertex; ++i){
-        for(int j =0; j<numVertex; ++j){
+    for(int i = 0; i<numVertex; i++){
+        for(int j = 0; j<numVertex; j++){
             if (matrixSparse[i][j]==0){
                 //do nothing
             }
@@ -147,9 +147,9 @@ void Graphm::printDense(int** matrixDense){
     output.open("../../data/dense.dat",std::ios::app);
     output << numVertex << std::endl;
     output << numEdge << std::endl;
-    for(int i =0; i<numVertex; ++i){
-        for(int j =0; j<numVertex; ++j){
-            if(i <=j){
+    for(int i = 0; i< numVertex; i++){
+        for(int j = 0; j< numVertex; j++){
+            if(i <= j){
             //do nothing
             }
             else{
@@ -241,6 +241,9 @@ int main(int argc, char* argv[]){
     }
 
     srand(int(time(NULL)));
+    remove( "../../data/sparse.dat" );
+    remove( "../../data/sparse.dat" );
+
     std::cout << "Generating " << (max_num-start)/steps + 1 << " graphs "<< std::endl;
     for (int i = start; i <= max_num; i+=steps){
         Graphm obj(i);

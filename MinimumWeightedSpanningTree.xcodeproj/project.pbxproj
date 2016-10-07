@@ -135,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				8FAD48AE1D9C810200563E75 /* src */,
-				8FAD48AD1D9C810200563E75 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +148,7 @@
 				8F190C961DA6974C00E3C703 /* vertex */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8FAD48AE1D9C810200563E75 /* src */ = {
@@ -164,6 +164,7 @@
 				8F0694381D9C8482002D72CD /* LinkList.cpp */,
 				8F190C601DA67D4500E3C703 /* generate.cpp */,
 				8F06943A1D9C8482002D72CD /* test.cpp */,
+				8FAD48AD1D9C810200563E75 /* Products */,
 			);
 			path = src;
 			sourceTree = "<group>";
