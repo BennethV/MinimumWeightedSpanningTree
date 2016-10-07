@@ -254,7 +254,7 @@ int main(int argc, char* argv[]){
     std::cout << std::endl << std::flush;
     std::cout << "Executable Runtime: " << double( clock() - startTime) / (double) CLOCKS_PER_SEC << " seconds." << std::endl;
     std::cout << "Processing complete: created ../../data/dense.dat" << std::endl;
-    std::cout << "Processing complete: created ../../data/dense.dat" << std::endl;
+    std::cout << "Processing complete: created ../../data/sparse.dat" << std::endl;
 
     return 0;
 }
