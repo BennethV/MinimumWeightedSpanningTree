@@ -76,10 +76,8 @@ void Graphm::genDenseGraph(int maximum){
         //srand(int(time(NULL)));
         for(int i = 0 ; i < numVertex ; i++){
             for(int j = 0; j < numVertex ; j++){
-
-                matrixDense[i][j] = randomWeights(maximum);
+                    matrixDense[i][j] = randomWeights(maximum);
             }
-
         }
        numEdge = 0.5*(pow(numVertex,2)-numVertex);
        setZeros(matrixDense);
@@ -93,11 +91,11 @@ void Graphm::genDenseGraph(int maximum){
 * of vertices i.e any pair of vertices is joined by exactly one vertex.
 */
 void Graphm::genSparseGraph(int maximum){
-     //srand(int(time(NULL)));
+    //srand(int(time(NULL)));
     for(int i = 0 ; i < numVertex ; i++){
             for(int j = 0; j < numVertex ; j++){
                 if((i-j)==1){
-                    matrixSparse[i][j]= randomWeights(maximum);
+                    matrixSparse[i][j]=randomWeights(maximum);
                 }
             }
         }
@@ -131,7 +129,7 @@ void Graphm::printSparse(int** matrixSparse){
     output << numEdge << std::endl;
     for(int i = 0; i<numVertex; i++){
         for(int j = 0; j<numVertex; j++){
-            if (matrixSparse[i][j]==0){
+            if ((matrixSparse[i][j]==0)||(i==j)){
                 //do nothing
             }
            else{
@@ -147,8 +145,8 @@ void Graphm::printDense(int** matrixDense){
     output.open("../../data/dense.dat",std::ios::app);
     output << numVertex << std::endl;
     output << numEdge << std::endl;
-    for(int i = 0; i< numVertex; i++){
-        for(int j = 0; j< numVertex; j++){
+    for(int i = 0; i< numVertex; ++i){
+        for(int j = 0; j< numVertex; ++j){
             if(i <= j){
             //do nothing
             }
@@ -241,7 +239,7 @@ int main(int argc, char* argv[]){
     }
 
     srand(int(time(NULL)));
-    remove( "../../data/sparse.dat" );
+    remove( "../../data/dense.dat" );
     remove( "../../data/sparse.dat" );
 
     std::cout << "Generating " << (max_num-start)/steps + 1 << " graphs "<< std::endl;

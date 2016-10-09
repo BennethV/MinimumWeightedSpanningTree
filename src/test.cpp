@@ -28,6 +28,7 @@ using namespace std;
 int main(void){
     srand(double(time(NULL)));
 
+/*  Example code below, manually constructing a graph object
 //    Graph_list* g = new Graph_list;
 //    g->addVertex();
 //    g->addVertex();
@@ -42,10 +43,13 @@ int main(void){
 //    g->addVertex();
 //    g->display();
 //    g->removeEdge(g->numEdges()-1);
-//    // g->addEdge(1, 5, rand()%100 + 1); //Does not exist, throws an exception
+//    // g->addEdge(1, 5, int_random()); //Does not exist, throws an exception
 //    g->display();
+ */
 
-    const string fileInName = "../../data/sparse.dat";
+    //const string fileInName = "../../data/sparse.dat";
+    const string fileInName = "../../data/dense.dat";
+
     ifstream input(fileInName, ios::in);
 
     // error checking
@@ -67,26 +71,24 @@ int main(void){
         istringstream ss_1(line);
         ss_1 >> numVertex;
         linesCount--;
-
         getline(input, line);
         istringstream ss_2(line);
         ss_2 >> numEdge;
         linesCount--;
-        
-        //std::cout << "Vertices: " << numVertex << " Edges: " << numEdge << std::endl;
+
         Graph_list* g = new Graph_list;
-         
+
         for (int i = 0; i < numVertex; i++) g->addVertex();
         for (int i = 0; i < numEdge; i++) {
             getline(input, line);
             linesCount--;
             istringstream ss(line);
             ss >> vert1 >> vert2 >> weight;
+            //std::cout << vert1 << "→" << vert2 << "(" << weight << ")" << std::endl;
             g->addEdge(vert1, vert2, weight);
-            //std::cout << "connecting " << vert1 << " to " << vert2 << " with weight " << weight << std::endl;
         };
 
-        // Do something with the graph
+        // Do something with the graph here....
         g->display();
 
         delete g;

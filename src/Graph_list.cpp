@@ -47,6 +47,9 @@ void Graph_list::addEdge(int vert1, int vert2, double weight){
     if ( vert2>numVertices()){
         throw std::out_of_range("Second vertex does not exist (out of range), unable to addEdge()");
     };
+    if (vert1==vert2){
+        throw std::logic_error("Vertex cannot connect to itself, unable to addEdge()");
+    }
     if (isConnected(vert1, vert2)) {
         std::cerr << "Warning : Vertices " << vertices.at(vert1)->getName() << " and " << vertices.at(vert2)->getName() << " are already connected, unable to addEdge()" << std::endl;
         status = false;
