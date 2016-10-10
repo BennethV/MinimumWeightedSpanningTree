@@ -161,6 +161,8 @@ void Graphm::printDense(int** matrixDense){
 double Graphm::randomWeights(int maximum){
     weight = rand()%maximum + 1;
     return weight;
+    //double float_random(){
+    //    return (double)rand() / RAND_MAX;
 }
 
 Graphm::~Graphm(){
